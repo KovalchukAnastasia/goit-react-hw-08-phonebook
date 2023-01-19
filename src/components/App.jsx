@@ -1,16 +1,26 @@
-export const App = () => {
+import ContactForm from './ContactForm/contactForm';
+import ContactList from './ContactList/contactList';
+import Filter from './Filter/filter';
+import { GlobalStyle } from './GlobalStyle';
+import { Phonebook, MainTitle, ContactTitle } from './Layout';
+// import { useSelector } from 'react-redux';
+// import { selectContacts } from '../redux/selectors';
+
+export default function App() {
+  // const contacts = useSelector(selectContacts);
+  // console.log(contacts);
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Phonebook>
+      <MainTitle>Phonebook</MainTitle>
+      <ContactForm />
+      <ContactTitle>Contacts</ContactTitle>
+      {
+        /*contacts.length > 0 &&*/ <>
+          <Filter />
+          <ContactList />
+        </>
+      }
+      <GlobalStyle />
+    </Phonebook>
   );
-};
+}
