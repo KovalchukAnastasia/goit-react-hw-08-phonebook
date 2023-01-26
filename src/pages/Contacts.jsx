@@ -9,6 +9,7 @@ import Filter from 'components/Filter/Filter';
 export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
+  // console.log()
 
   useEffect(() => {
     dispatch(fetchContacts());
